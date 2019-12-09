@@ -22,7 +22,7 @@ namespace AIO
         private void Form1_Load(object sender, EventArgs e)
         {
             // Check if offsets file exists
-            UpdateStuff.getOffsets();
+            UpdateStuff.askUser();
         }
     }
 }
