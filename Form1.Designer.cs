@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.updateOffsetsBtn = new System.Windows.Forms.Button();
             this.cheatBox = new System.Windows.Forms.GroupBox();
             this.ProgramTitle = new System.Windows.Forms.Label();
             this.SubText = new System.Windows.Forms.Label();
@@ -37,25 +36,24 @@
             this.statusBox = new System.Windows.Forms.GroupBox();
             this.AuthorText = new System.Windows.Forms.Label();
             this.githubLink = new System.Windows.Forms.LinkLabel();
+            this.bhopCheckbox = new System.Windows.Forms.CheckBox();
+            this.espCheckbox = new System.Windows.Forms.CheckBox();
+            this.triggerbotCheckbox = new System.Windows.Forms.CheckBox();
+            this.aimbotCheckbox = new System.Windows.Forms.CheckBox();
+            this.cheatBox.SuspendLayout();
             this.ConsoleBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // updateOffsetsBtn
-            // 
-            this.updateOffsetsBtn.Location = new System.Drawing.Point(636, 39);
-            this.updateOffsetsBtn.Name = "updateOffsetsBtn";
-            this.updateOffsetsBtn.Size = new System.Drawing.Size(101, 46);
-            this.updateOffsetsBtn.TabIndex = 0;
-            this.updateOffsetsBtn.Text = "Update Offsets";
-            this.updateOffsetsBtn.UseVisualStyleBackColor = true;
-            this.updateOffsetsBtn.Click += new System.EventHandler(this.updateOffsetsBtn_Click);
-            // 
             // cheatBox
             // 
+            this.cheatBox.Controls.Add(this.aimbotCheckbox);
+            this.cheatBox.Controls.Add(this.triggerbotCheckbox);
+            this.cheatBox.Controls.Add(this.espCheckbox);
+            this.cheatBox.Controls.Add(this.bhopCheckbox);
             this.cheatBox.ForeColor = System.Drawing.Color.White;
             this.cheatBox.Location = new System.Drawing.Point(30, 120);
             this.cheatBox.Name = "cheatBox";
-            this.cheatBox.Size = new System.Drawing.Size(315, 99);
+            this.cheatBox.Size = new System.Drawing.Size(315, 122);
             this.cheatBox.TabIndex = 1;
             this.cheatBox.TabStop = false;
             this.cheatBox.Text = "Cheats";
@@ -106,9 +104,9 @@
             // statusBox
             // 
             this.statusBox.ForeColor = System.Drawing.Color.White;
-            this.statusBox.Location = new System.Drawing.Point(30, 225);
+            this.statusBox.Location = new System.Drawing.Point(30, 248);
             this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(315, 213);
+            this.statusBox.Size = new System.Drawing.Size(315, 190);
             this.statusBox.TabIndex = 5;
             this.statusBox.TabStop = false;
             this.statusBox.Text = "Status";
@@ -136,6 +134,46 @@
             this.githubLink.Text = "https://github.com/Astrol99/AIO";
             this.githubLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLink_LinkClicked);
             // 
+            // bhopCheckbox
+            // 
+            this.bhopCheckbox.AutoSize = true;
+            this.bhopCheckbox.Location = new System.Drawing.Point(6, 19);
+            this.bhopCheckbox.Name = "bhopCheckbox";
+            this.bhopCheckbox.Size = new System.Drawing.Size(51, 17);
+            this.bhopCheckbox.TabIndex = 0;
+            this.bhopCheckbox.Text = "Bhop";
+            this.bhopCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // espCheckbox
+            // 
+            this.espCheckbox.AutoSize = true;
+            this.espCheckbox.Location = new System.Drawing.Point(6, 42);
+            this.espCheckbox.Name = "espCheckbox";
+            this.espCheckbox.Size = new System.Drawing.Size(47, 17);
+            this.espCheckbox.TabIndex = 1;
+            this.espCheckbox.Text = "ESP";
+            this.espCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // triggerbotCheckbox
+            // 
+            this.triggerbotCheckbox.AutoSize = true;
+            this.triggerbotCheckbox.Location = new System.Drawing.Point(6, 65);
+            this.triggerbotCheckbox.Name = "triggerbotCheckbox";
+            this.triggerbotCheckbox.Size = new System.Drawing.Size(74, 17);
+            this.triggerbotCheckbox.TabIndex = 2;
+            this.triggerbotCheckbox.Text = "Triggerbot";
+            this.triggerbotCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // aimbotCheckbox
+            // 
+            this.aimbotCheckbox.AutoSize = true;
+            this.aimbotCheckbox.Location = new System.Drawing.Point(6, 88);
+            this.aimbotCheckbox.Name = "aimbotCheckbox";
+            this.aimbotCheckbox.Size = new System.Drawing.Size(58, 17);
+            this.aimbotCheckbox.TabIndex = 3;
+            this.aimbotCheckbox.Text = "Aimbot";
+            this.aimbotCheckbox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,12 +187,13 @@
             this.Controls.Add(this.SubText);
             this.Controls.Add(this.ProgramTitle);
             this.Controls.Add(this.cheatBox);
-            this.Controls.Add(this.updateOffsetsBtn);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "AIO";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.cheatBox.ResumeLayout(false);
+            this.cheatBox.PerformLayout();
             this.ConsoleBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,8 +201,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button updateOffsetsBtn;
         private System.Windows.Forms.GroupBox cheatBox;
         private System.Windows.Forms.Label ProgramTitle;
         private System.Windows.Forms.Label SubText;
@@ -172,6 +209,10 @@
         private System.Windows.Forms.GroupBox statusBox;
         private System.Windows.Forms.Label AuthorText;
         private System.Windows.Forms.LinkLabel githubLink;
+        private System.Windows.Forms.CheckBox aimbotCheckbox;
+        private System.Windows.Forms.CheckBox triggerbotCheckbox;
+        private System.Windows.Forms.CheckBox espCheckbox;
+        private System.Windows.Forms.CheckBox bhopCheckbox;
     }
 }
 

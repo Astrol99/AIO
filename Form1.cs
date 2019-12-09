@@ -14,13 +14,8 @@ namespace AIO
         // First things to do when window opens
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Check if offsets file exists
-            UpdateStuff.askUser();
-        }
-
-        private void updateOffsetsBtn_Click(object sender, EventArgs e)
-        {
-            UpdateStuff.getOffsets();
+            // Download offsets right when user launches program
+            OffsetsHandler.getOffsets();
         }
 
         private void label1_Click(object sender, EventArgs e)
