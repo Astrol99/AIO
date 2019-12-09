@@ -36,11 +36,6 @@ namespace AIO
             consoleTextbox.ScrollToCaret();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/Astrol99/AIO");
@@ -50,11 +45,6 @@ namespace AIO
         {
             attachedStatus.Text = "True";
             attachedStatus.ForeColor = Color.Lime;
-        }
-
-        private void cheatBox_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

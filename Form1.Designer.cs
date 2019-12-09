@@ -61,7 +61,7 @@
             this.cheatBox.TabIndex = 1;
             this.cheatBox.TabStop = false;
             this.cheatBox.Text = "Cheat Modules";
-            this.cheatBox.Enter += new System.EventHandler(this.cheatBox_Enter);
+//            this.cheatBox.Enter += new System.EventHandler(this.cheatBox_Enter);
             // 
             // ProgramTitle
             // 
@@ -128,7 +128,7 @@
             this.AuthorText.Size = new System.Drawing.Size(48, 13);
             this.AuthorText.TabIndex = 6;
             this.AuthorText.Text = "By: astr0";
-            this.AuthorText.Click += new System.EventHandler(this.label1_Click);
+//            this.AuthorText.Click += new System.EventHandler(this.label1_Click);
             // 
             // githubLink
             // 
@@ -189,10 +189,10 @@
             this.cheatTabs.Controls.Add(this.tabPage2);
             this.cheatTabs.Controls.Add(this.tabPage3);
             this.cheatTabs.Controls.Add(this.tabPage4);
-            this.cheatTabs.Location = new System.Drawing.Point(7, 20);
+            this.cheatTabs.Location = new System.Drawing.Point(7, 14);
             this.cheatTabs.Name = "cheatTabs";
             this.cheatTabs.SelectedIndex = 0;
-            this.cheatTabs.Size = new System.Drawing.Size(265, 219);
+            this.cheatTabs.Size = new System.Drawing.Size(265, 225);
             this.cheatTabs.TabIndex = 0;
             // 
             // tabPage1
@@ -200,7 +200,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(257, 193);
+            this.tabPage1.Size = new System.Drawing.Size(257, 199);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ESP";
             this.tabPage1.UseVisualStyleBackColor = true;
