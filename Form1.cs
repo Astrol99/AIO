@@ -6,6 +6,10 @@ namespace AIO
 {
     public partial class Form1 : Form
     {
+        // Offsets needed
+        public static Newtonsoft.Json.Linq.JObject sig;
+        public static Newtonsoft.Json.Linq.JObject netvars;
+
         public Form1()
         {
             InitializeComponent();
@@ -15,7 +19,20 @@ namespace AIO
         private void Form1_Load(object sender, EventArgs e)
         {
             // Download offsets right when user launches program
-            OffsetsHandler.getOffsets();
+            debug("Downloading offsets...");
+            var rawJson = OffsetsHandler.getOffsets();
+            debug("Done!");
+            OffsetsHandler.deserializeJSON(rawJson);
+            debug("Deserialized and parsed raw offsets json:");
+        }
+
+        private void debug(string text)
+        {
+            Debug.Write(text + Environment.NewLine);
+            text = DateTime.Now.ToString("[h:mm:ss tt] ") + text + Environment.NewLine;
+            consoleTextbox.Text = consoleTextbox.Text + text;
+            consoleTextbox.SelectionStart = consoleTextbox.TextLength;
+            consoleTextbox.ScrollToCaret();
         }
 
         private void label1_Click(object sender, EventArgs e)

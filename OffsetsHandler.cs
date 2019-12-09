@@ -8,14 +8,14 @@ namespace AIO
 {
     class OffsetsHandler
     {
-        public static void getOffsets()
+        public static String getOffsets()
         {
             // Download files from https://github.com/frk1/hazedumper
 
             using (WebClient wc = new WebClient())
             {
                 String offsetsJsonRAW = wc.DownloadString("https://raw.githubusercontent.com/frk1/hazedumper/master/csgo.json");
-                deserializeJSON(offsetsJsonRAW);
+                return offsetsJsonRAW;
             }
         }
 
@@ -24,6 +24,9 @@ namespace AIO
             try
             {
                 var csgoJson = JsonConvert.DeserializeObject<dynamic>(rawJSON);
+
+                Form1.sig = csgoJson.signatures;
+                Form1.netvars = csgoJson.netvars;
             }
             catch (Exception ex)
             {
