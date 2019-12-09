@@ -41,8 +41,12 @@
             this.triggerbotCheckbox = new System.Windows.Forms.CheckBox();
             this.aimbotCheckbox = new System.Windows.Forms.CheckBox();
             this.attachCSGOBtn = new System.Windows.Forms.Button();
+            this.attachLabel = new System.Windows.Forms.Label();
+            this.attachedStatus = new System.Windows.Forms.Label();
+            this.playersGroupBox = new System.Windows.Forms.GroupBox();
             this.cheatBox.SuspendLayout();
             this.ConsoleBox.SuspendLayout();
+            this.statusBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // cheatBox
@@ -54,7 +58,7 @@
             this.cheatBox.ForeColor = System.Drawing.Color.White;
             this.cheatBox.Location = new System.Drawing.Point(30, 120);
             this.cheatBox.Name = "cheatBox";
-            this.cheatBox.Size = new System.Drawing.Size(315, 122);
+            this.cheatBox.Size = new System.Drawing.Size(193, 245);
             this.cheatBox.TabIndex = 1;
             this.cheatBox.TabStop = false;
             this.cheatBox.Text = "Cheats";
@@ -85,9 +89,9 @@
             // 
             this.ConsoleBox.Controls.Add(this.consoleTextbox);
             this.ConsoleBox.ForeColor = System.Drawing.Color.White;
-            this.ConsoleBox.Location = new System.Drawing.Point(351, 120);
+            this.ConsoleBox.Location = new System.Drawing.Point(229, 120);
             this.ConsoleBox.Name = "ConsoleBox";
-            this.ConsoleBox.Size = new System.Drawing.Size(386, 318);
+            this.ConsoleBox.Size = new System.Drawing.Size(508, 318);
             this.ConsoleBox.TabIndex = 4;
             this.ConsoleBox.TabStop = false;
             this.ConsoleBox.Text = "Console";
@@ -99,16 +103,18 @@
             this.consoleTextbox.Location = new System.Drawing.Point(6, 19);
             this.consoleTextbox.Name = "consoleTextbox";
             this.consoleTextbox.ReadOnly = true;
-            this.consoleTextbox.Size = new System.Drawing.Size(374, 293);
+            this.consoleTextbox.Size = new System.Drawing.Size(496, 293);
             this.consoleTextbox.TabIndex = 0;
             this.consoleTextbox.Text = "";
             // 
             // statusBox
             // 
+            this.statusBox.Controls.Add(this.attachedStatus);
+            this.statusBox.Controls.Add(this.attachLabel);
             this.statusBox.ForeColor = System.Drawing.Color.White;
-            this.statusBox.Location = new System.Drawing.Point(30, 248);
+            this.statusBox.Location = new System.Drawing.Point(30, 371);
             this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(315, 190);
+            this.statusBox.Size = new System.Drawing.Size(193, 67);
             this.statusBox.TabIndex = 5;
             this.statusBox.TabStop = false;
             this.statusBox.Text = "Status";
@@ -128,7 +134,7 @@
             // 
             this.githubLink.AutoSize = true;
             this.githubLink.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.githubLink.Location = new System.Drawing.Point(576, 441);
+            this.githubLink.Location = new System.Drawing.Point(761, 442);
             this.githubLink.Name = "githubLink";
             this.githubLink.Size = new System.Drawing.Size(161, 13);
             this.githubLink.TabIndex = 7;
@@ -178,19 +184,52 @@
             // 
             // attachCSGOBtn
             // 
-            this.attachCSGOBtn.Location = new System.Drawing.Point(579, 29);
+            this.attachCSGOBtn.Location = new System.Drawing.Point(764, 29);
             this.attachCSGOBtn.Name = "attachCSGOBtn";
             this.attachCSGOBtn.Size = new System.Drawing.Size(152, 67);
             this.attachCSGOBtn.TabIndex = 8;
             this.attachCSGOBtn.Text = "Attach To CSGO";
             this.attachCSGOBtn.UseVisualStyleBackColor = true;
+            this.attachCSGOBtn.Click += new System.EventHandler(this.attachCSGOBtn_Click);
+            // 
+            // attachLabel
+            // 
+            this.attachLabel.AutoSize = true;
+            this.attachLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attachLabel.Location = new System.Drawing.Point(28, 25);
+            this.attachLabel.Name = "attachLabel";
+            this.attachLabel.Size = new System.Drawing.Size(78, 20);
+            this.attachLabel.TabIndex = 0;
+            this.attachLabel.Text = "Attached:";
+            // 
+            // attachedStatus
+            // 
+            this.attachedStatus.AutoSize = true;
+            this.attachedStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attachedStatus.ForeColor = System.Drawing.Color.Red;
+            this.attachedStatus.Location = new System.Drawing.Point(112, 25);
+            this.attachedStatus.Name = "attachedStatus";
+            this.attachedStatus.Size = new System.Drawing.Size(48, 20);
+            this.attachedStatus.TabIndex = 1;
+            this.attachedStatus.Text = "False";
+            // 
+            // playersGroupBox
+            // 
+            this.playersGroupBox.ForeColor = System.Drawing.Color.White;
+            this.playersGroupBox.Location = new System.Drawing.Point(743, 120);
+            this.playersGroupBox.Name = "playersGroupBox";
+            this.playersGroupBox.Size = new System.Drawing.Size(179, 318);
+            this.playersGroupBox.TabIndex = 9;
+            this.playersGroupBox.TabStop = false;
+            this.playersGroupBox.Text = "Players";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(763, 464);
+            this.ClientSize = new System.Drawing.Size(934, 464);
+            this.Controls.Add(this.playersGroupBox);
             this.Controls.Add(this.attachCSGOBtn);
             this.Controls.Add(this.githubLink);
             this.Controls.Add(this.AuthorText);
@@ -207,6 +246,8 @@
             this.cheatBox.ResumeLayout(false);
             this.cheatBox.PerformLayout();
             this.ConsoleBox.ResumeLayout(false);
+            this.statusBox.ResumeLayout(false);
+            this.statusBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,6 +267,9 @@
         private System.Windows.Forms.CheckBox espCheckbox;
         private System.Windows.Forms.CheckBox bhopCheckbox;
         private System.Windows.Forms.Button attachCSGOBtn;
+        private System.Windows.Forms.Label attachedStatus;
+        private System.Windows.Forms.Label attachLabel;
+        private System.Windows.Forms.GroupBox playersGroupBox;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -23,7 +24,7 @@ namespace AIO
             var rawJson = OffsetsHandler.getOffsets();
             debug("Done!");
             OffsetsHandler.deserializeJSON(rawJson);
-            debug("Deserialized and parsed raw offsets json:");
+            debug("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
         }
 
         private void debug(string text)
@@ -43,6 +44,12 @@ namespace AIO
         private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/Astrol99/AIO");
+        }
+
+        private void attachCSGOBtn_Click(object sender, EventArgs e)
+        {
+            attachedStatus.Text = "True";
+            attachedStatus.ForeColor = Color.Lime;
         }
     }
 }
