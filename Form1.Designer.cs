@@ -59,7 +59,6 @@
             this.cheatBox.TabIndex = 1;
             this.cheatBox.TabStop = false;
             this.cheatBox.Text = "Cheats";
-            this.cheatBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // ProgramTitle
             // 
@@ -135,6 +134,7 @@
             this.githubLink.TabIndex = 7;
             this.githubLink.TabStop = true;
             this.githubLink.Text = "https://github.com/Astrol99/AIO";
+            this.githubLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLink_LinkClicked);
             // 
             // Form1
             // 
