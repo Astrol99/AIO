@@ -24,5 +24,10 @@ namespace AIO
             // Check if offsets file exists
             UpdateStuff.askUser();
         }
+
+        private void updateOffsetsBtn_Click(object sender, EventArgs e)
+        {
+            UpdateStuff.getOffsets();
+        }
     }
 }

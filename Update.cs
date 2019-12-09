@@ -40,7 +40,7 @@ namespace AIO
             }
             else
             {
-                result = MessageBox.Show("Offsets found. Update offsets?", caption, btn, icon);
+                result = DialogResult.No;
             }
 
             if (result == DialogResult.Yes)
