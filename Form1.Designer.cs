@@ -36,32 +36,32 @@
             this.statusBox = new System.Windows.Forms.GroupBox();
             this.AuthorText = new System.Windows.Forms.Label();
             this.githubLink = new System.Windows.Forms.LinkLabel();
-            this.bhopCheckbox = new System.Windows.Forms.CheckBox();
-            this.espCheckbox = new System.Windows.Forms.CheckBox();
-            this.triggerbotCheckbox = new System.Windows.Forms.CheckBox();
-            this.aimbotCheckbox = new System.Windows.Forms.CheckBox();
             this.attachCSGOBtn = new System.Windows.Forms.Button();
             this.attachLabel = new System.Windows.Forms.Label();
             this.attachedStatus = new System.Windows.Forms.Label();
             this.playersGroupBox = new System.Windows.Forms.GroupBox();
+            this.cheatTabs = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.cheatBox.SuspendLayout();
             this.ConsoleBox.SuspendLayout();
             this.statusBox.SuspendLayout();
+            this.cheatTabs.SuspendLayout();
             this.SuspendLayout();
             // 
             // cheatBox
             // 
-            this.cheatBox.Controls.Add(this.aimbotCheckbox);
-            this.cheatBox.Controls.Add(this.triggerbotCheckbox);
-            this.cheatBox.Controls.Add(this.espCheckbox);
-            this.cheatBox.Controls.Add(this.bhopCheckbox);
+            this.cheatBox.Controls.Add(this.cheatTabs);
             this.cheatBox.ForeColor = System.Drawing.Color.White;
             this.cheatBox.Location = new System.Drawing.Point(30, 120);
             this.cheatBox.Name = "cheatBox";
-            this.cheatBox.Size = new System.Drawing.Size(193, 245);
+            this.cheatBox.Size = new System.Drawing.Size(278, 245);
             this.cheatBox.TabIndex = 1;
             this.cheatBox.TabStop = false;
-            this.cheatBox.Text = "Cheats";
+            this.cheatBox.Text = "Cheat Modules";
+            this.cheatBox.Enter += new System.EventHandler(this.cheatBox_Enter);
             // 
             // ProgramTitle
             // 
@@ -89,9 +89,9 @@
             // 
             this.ConsoleBox.Controls.Add(this.consoleTextbox);
             this.ConsoleBox.ForeColor = System.Drawing.Color.White;
-            this.ConsoleBox.Location = new System.Drawing.Point(229, 120);
+            this.ConsoleBox.Location = new System.Drawing.Point(314, 120);
             this.ConsoleBox.Name = "ConsoleBox";
-            this.ConsoleBox.Size = new System.Drawing.Size(508, 318);
+            this.ConsoleBox.Size = new System.Drawing.Size(423, 318);
             this.ConsoleBox.TabIndex = 4;
             this.ConsoleBox.TabStop = false;
             this.ConsoleBox.Text = "Console";
@@ -103,7 +103,7 @@
             this.consoleTextbox.Location = new System.Drawing.Point(6, 19);
             this.consoleTextbox.Name = "consoleTextbox";
             this.consoleTextbox.ReadOnly = true;
-            this.consoleTextbox.Size = new System.Drawing.Size(496, 293);
+            this.consoleTextbox.Size = new System.Drawing.Size(411, 293);
             this.consoleTextbox.TabIndex = 0;
             this.consoleTextbox.Text = "";
             // 
@@ -114,7 +114,7 @@
             this.statusBox.ForeColor = System.Drawing.Color.White;
             this.statusBox.Location = new System.Drawing.Point(30, 371);
             this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(193, 67);
+            this.statusBox.Size = new System.Drawing.Size(278, 67);
             this.statusBox.TabIndex = 5;
             this.statusBox.TabStop = false;
             this.statusBox.Text = "Status";
@@ -142,46 +142,6 @@
             this.githubLink.Text = "https://github.com/Astrol99/AIO";
             this.githubLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLink_LinkClicked);
             // 
-            // bhopCheckbox
-            // 
-            this.bhopCheckbox.AutoSize = true;
-            this.bhopCheckbox.Location = new System.Drawing.Point(6, 19);
-            this.bhopCheckbox.Name = "bhopCheckbox";
-            this.bhopCheckbox.Size = new System.Drawing.Size(51, 17);
-            this.bhopCheckbox.TabIndex = 0;
-            this.bhopCheckbox.Text = "Bhop";
-            this.bhopCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // espCheckbox
-            // 
-            this.espCheckbox.AutoSize = true;
-            this.espCheckbox.Location = new System.Drawing.Point(6, 42);
-            this.espCheckbox.Name = "espCheckbox";
-            this.espCheckbox.Size = new System.Drawing.Size(47, 17);
-            this.espCheckbox.TabIndex = 1;
-            this.espCheckbox.Text = "ESP";
-            this.espCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // triggerbotCheckbox
-            // 
-            this.triggerbotCheckbox.AutoSize = true;
-            this.triggerbotCheckbox.Location = new System.Drawing.Point(6, 65);
-            this.triggerbotCheckbox.Name = "triggerbotCheckbox";
-            this.triggerbotCheckbox.Size = new System.Drawing.Size(74, 17);
-            this.triggerbotCheckbox.TabIndex = 2;
-            this.triggerbotCheckbox.Text = "Triggerbot";
-            this.triggerbotCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // aimbotCheckbox
-            // 
-            this.aimbotCheckbox.AutoSize = true;
-            this.aimbotCheckbox.Location = new System.Drawing.Point(6, 88);
-            this.aimbotCheckbox.Name = "aimbotCheckbox";
-            this.aimbotCheckbox.Size = new System.Drawing.Size(58, 17);
-            this.aimbotCheckbox.TabIndex = 3;
-            this.aimbotCheckbox.Text = "Aimbot";
-            this.aimbotCheckbox.UseVisualStyleBackColor = true;
-            // 
             // attachCSGOBtn
             // 
             this.attachCSGOBtn.Location = new System.Drawing.Point(764, 29);
@@ -196,7 +156,7 @@
             // 
             this.attachLabel.AutoSize = true;
             this.attachLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attachLabel.Location = new System.Drawing.Point(28, 25);
+            this.attachLabel.Location = new System.Drawing.Point(73, 25);
             this.attachLabel.Name = "attachLabel";
             this.attachLabel.Size = new System.Drawing.Size(78, 20);
             this.attachLabel.TabIndex = 0;
@@ -207,7 +167,7 @@
             this.attachedStatus.AutoSize = true;
             this.attachedStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.attachedStatus.ForeColor = System.Drawing.Color.Red;
-            this.attachedStatus.Location = new System.Drawing.Point(112, 25);
+            this.attachedStatus.Location = new System.Drawing.Point(157, 25);
             this.attachedStatus.Name = "attachedStatus";
             this.attachedStatus.Size = new System.Drawing.Size(48, 20);
             this.attachedStatus.TabIndex = 1;
@@ -222,6 +182,58 @@
             this.playersGroupBox.TabIndex = 9;
             this.playersGroupBox.TabStop = false;
             this.playersGroupBox.Text = "Players";
+            // 
+            // cheatTabs
+            // 
+            this.cheatTabs.Controls.Add(this.tabPage1);
+            this.cheatTabs.Controls.Add(this.tabPage2);
+            this.cheatTabs.Controls.Add(this.tabPage3);
+            this.cheatTabs.Controls.Add(this.tabPage4);
+            this.cheatTabs.Location = new System.Drawing.Point(7, 20);
+            this.cheatTabs.Name = "cheatTabs";
+            this.cheatTabs.SelectedIndex = 0;
+            this.cheatTabs.Size = new System.Drawing.Size(265, 219);
+            this.cheatTabs.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(257, 193);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "ESP";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(257, 193);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Bhop";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(257, 193);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Aimbot";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(257, 193);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Antiaim";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -244,10 +256,10 @@
             this.Text = "AIO";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.cheatBox.ResumeLayout(false);
-            this.cheatBox.PerformLayout();
             this.ConsoleBox.ResumeLayout(false);
             this.statusBox.ResumeLayout(false);
             this.statusBox.PerformLayout();
+            this.cheatTabs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,14 +274,15 @@
         private System.Windows.Forms.GroupBox statusBox;
         private System.Windows.Forms.Label AuthorText;
         private System.Windows.Forms.LinkLabel githubLink;
-        private System.Windows.Forms.CheckBox aimbotCheckbox;
-        private System.Windows.Forms.CheckBox triggerbotCheckbox;
-        private System.Windows.Forms.CheckBox espCheckbox;
-        private System.Windows.Forms.CheckBox bhopCheckbox;
         private System.Windows.Forms.Button attachCSGOBtn;
         private System.Windows.Forms.Label attachedStatus;
         private System.Windows.Forms.Label attachLabel;
         private System.Windows.Forms.GroupBox playersGroupBox;
+        private System.Windows.Forms.TabControl cheatTabs;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
 

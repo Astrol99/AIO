@@ -51,5 +51,10 @@ namespace AIO
             attachedStatus.Text = "True";
             attachedStatus.ForeColor = Color.Lime;
         }
+
+        private void cheatBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
