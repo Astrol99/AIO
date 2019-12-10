@@ -7,7 +7,7 @@ namespace AIO
 {
     public partial class Form1 : Form
     {
-        public const string Version = "v1.1";
+        public const string Version = "v1.2";
 
         // Offsets needed
         public static Newtonsoft.Json.Linq.JObject sig;
@@ -21,8 +21,6 @@ namespace AIO
         // Things to run when form has loaded and displayed
         private void Form1_Shown(Object sender, EventArgs e)
         {
-            // Print MOTD to console
-
             // Adjust version label to correct version
             versionLabel.Text = Version;
 
@@ -34,12 +32,15 @@ namespace AIO
             debug("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
         }
 
-        private void debug(string text, string c = "White")
+        private void debug(string text, string c = "White", bool date = true)
         {
             Color color = Color.FromName(c);
             Debug.Write(text + Environment.NewLine);
-            consoleTextbox.AppendText(DateTime.Now.ToString("[h:mm:ss tt] "));
 
+            if (date)
+            {
+                consoleTextbox.AppendText(DateTime.Now.ToString("[h:mm:ss tt] "));
+            }
             consoleTextbox.SelectionColor = color;
             consoleTextbox.AppendText(text + Environment.NewLine);
             consoleTextbox.SelectionColor = cheatBox.ForeColor;
