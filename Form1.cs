@@ -21,26 +21,24 @@ namespace AIO
         // Things to run when form has loaded and displayed
         private void Form1_Shown(Object sender, EventArgs e)
         {
+            // Print MOTD to console
+
+            // Adjust version label to correct version
+            versionLabel.Text = Version;
+
             // Download offsets right when user launches program
             debug("Downloading offsets...");
             var rawJson = OffsetsHandler.getOffsets();
             debug("Done!");
             OffsetsHandler.deserializeJSON(rawJson);
             debug("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
-
-            // Print MOTD to console
-
-
-            // Adjust version label to correct version
-            versionLabel.Text = Version;
         }
 
         private void debug(string text)
         {
             Debug.Write(text + Environment.NewLine);
             text = DateTime.Now.ToString("[h:mm:ss tt] ") + text + Environment.NewLine;
-            consoleTextbox.Text = consoleTextbox.Text + text;
-            consoleTextbox.SelectionStart = consoleTextbox.TextLength;
+            consoleTextbox.AppendText(text);
             consoleTextbox.ScrollToCaret();
         }
 
@@ -53,6 +51,7 @@ namespace AIO
         {
             attachedStatus.Text = "True";
             attachedStatus.ForeColor = Color.Lime;
+            debug("Attached to csgo");
         }
     }
 }
