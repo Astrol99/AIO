@@ -7,7 +7,7 @@ namespace AIO
 {
     public partial class Form1 : Form
     {
-        public const string Version = "v1.0";
+        public const string Version = "v1.1";
 
         // Offsets needed
         public static Newtonsoft.Json.Linq.JObject sig;
@@ -29,16 +29,21 @@ namespace AIO
             // Download offsets right when user launches program
             debug("Downloading offsets...");
             var rawJson = OffsetsHandler.getOffsets();
-            debug("Done!");
+            debug("Done!", "Lime");
             OffsetsHandler.deserializeJSON(rawJson);
             debug("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
         }
 
-        private void debug(string text)
+        private void debug(string text, string c = "White")
         {
+            Color color = Color.FromName(c);
             Debug.Write(text + Environment.NewLine);
-            text = DateTime.Now.ToString("[h:mm:ss tt] ") + text + Environment.NewLine;
-            consoleTextbox.AppendText(text);
+            consoleTextbox.AppendText(DateTime.Now.ToString("[h:mm:ss tt] "));
+
+            consoleTextbox.SelectionColor = color;
+            consoleTextbox.AppendText(text + Environment.NewLine);
+            consoleTextbox.SelectionColor = cheatBox.ForeColor;
+
             consoleTextbox.ScrollToCaret();
         }
 
