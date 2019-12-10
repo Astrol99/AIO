@@ -46,6 +46,7 @@
             this.attachCSGOBtn = new System.Windows.Forms.Button();
             this.playersGroupBox = new System.Windows.Forms.GroupBox();
             this.versionLabel = new System.Windows.Forms.Label();
+            this.offsetsProgressbar = new System.Windows.Forms.ProgressBar();
             this.cheatBox.SuspendLayout();
             this.cheatTabs.SuspendLayout();
             this.ConsoleBox.SuspendLayout();
@@ -245,12 +246,20 @@
             this.versionLabel.TabIndex = 10;
             this.versionLabel.Text = "v1.0";
             // 
+            // offsetsProgressbar
+            // 
+            this.offsetsProgressbar.Location = new System.Drawing.Point(320, 441);
+            this.offsetsProgressbar.Name = "offsetsProgressbar";
+            this.offsetsProgressbar.Size = new System.Drawing.Size(411, 16);
+            this.offsetsProgressbar.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(934, 464);
+            this.Controls.Add(this.offsetsProgressbar);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.playersGroupBox);
             this.Controls.Add(this.attachCSGOBtn);
@@ -295,6 +304,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label versionLabel;
+        private System.Windows.Forms.ProgressBar offsetsProgressbar;
     }
 }
 
