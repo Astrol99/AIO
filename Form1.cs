@@ -14,6 +14,7 @@ namespace AIO
         public const string Version = "v1.2";
 
         // Offsets needed
+        public static String rawJSON;
         public static Newtonsoft.Json.Linq.JObject sig;
         public static Newtonsoft.Json.Linq.JObject netvars;
 
@@ -31,39 +32,61 @@ namespace AIO
             versionLabel.Text = Version;
 
             // Download offsets right when user launches program
-            debug("Downloading offsets...");
-            var rawJson = getOffsets();
-            debug("Done!", "Lime");
-            deserializeJSON(rawJson);
-            debug("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
+            getOffsets();
         }
 
         #region Offset Handling
-        public static String getOffsets()
+
+        public void getOffsets()
         {
             // Download files from https://github.com/frk1/hazedumper
 
             using (WebClient wc = new WebClient())
             {
-                String offsetsJsonRAW = wc.DownloadString("https://raw.githubusercontent.com/frk1/hazedumper/master/csgo.json");
-                return offsetsJsonRAW;
+                Uri url = new Uri("https://raw.githubusercontent.com/frk1/hazedumper/master/csgo.json");
+
+                offsetsProgressbar.Maximum = 100;
+                wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
+                wc.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadStringCompleted);
+                debug("Downloading offsets...", "Yellow");
+                wc.DownloadStringAsync(url);
             }
         }
 
-        public static void deserializeJSON(string rawJSON)
+        #region Download Progressbar Handlers
+        void DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        {
+            debug("Done!", "Lime");
+            rawJSON = e.Result;
+            deserializeJSON();
+        }
+
+        void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            offsetsProgressbar.Value = offsetsProgressbar.Maximum * e.ProgressPercentage / 100;
+        }
+        #endregion
+
+
+        public void deserializeJSON()
         {
             try
             {
                 var csgoJson = JsonConvert.DeserializeObject<dynamic>(rawJSON);
 
-                Form1.sig = csgoJson.signatures;
-                Form1.netvars = csgoJson.netvars;
+                sig = csgoJson.signatures;
+                netvars = csgoJson.netvars;
+
+                debug($"TEST: timestamp -> {csgoJson.timestamp}");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+            debug("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
         }
+
+
         #endregion
 
 
