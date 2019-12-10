@@ -7,6 +7,8 @@ namespace AIO
 {
     public partial class Form1 : Form
     {
+        public const string Version = "v1.0";
+
         // Offsets needed
         public static Newtonsoft.Json.Linq.JObject sig;
         public static Newtonsoft.Json.Linq.JObject netvars;
@@ -16,8 +18,8 @@ namespace AIO
             InitializeComponent();
         }
 
-        // First things to do when window opens
-        private void Form1_Load(object sender, EventArgs e)
+        // Things to run when form has loaded and displayed
+        private void Form1_Shown(Object sender, EventArgs e)
         {
             // Download offsets right when user launches program
             debug("Downloading offsets...");
@@ -25,6 +27,12 @@ namespace AIO
             debug("Done!");
             OffsetsHandler.deserializeJSON(rawJson);
             debug("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
+
+            // Print MOTD to console
+
+
+            // Adjust version label to correct version
+            versionLabel.Text = Version;
         }
 
         private void debug(string text)
