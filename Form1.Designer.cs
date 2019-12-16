@@ -290,12 +290,9 @@
         private System.Windows.Forms.Label ProgramTitle;
         private System.Windows.Forms.Label SubText;
         private System.Windows.Forms.GroupBox ConsoleBox;
-        private System.Windows.Forms.RichTextBox consoleTextbox;
         private System.Windows.Forms.GroupBox statusBox;
         private System.Windows.Forms.Label AuthorText;
         private System.Windows.Forms.LinkLabel githubLink;
-        private System.Windows.Forms.Button attachCSGOBtn;
-        private System.Windows.Forms.Label attachedStatus;
         private System.Windows.Forms.Label attachLabel;
         private System.Windows.Forms.GroupBox playersGroupBox;
         private System.Windows.Forms.TabControl cheatTabs;
@@ -304,7 +301,10 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label versionLabel;
-        private System.Windows.Forms.ProgressBar offsetsProgressbar;
+        public System.Windows.Forms.Button attachCSGOBtn;
+        public System.Windows.Forms.Label attachedStatus;
+        public System.Windows.Forms.ProgressBar offsetsProgressbar;
+        public System.Windows.Forms.RichTextBox consoleTextbox;
     }
 }
 
