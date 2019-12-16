@@ -10,6 +10,10 @@ namespace AIO
         public Form1()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.MinimumSize = this.Size;
+            this.MaximumSize = this.Size;
+
             _Form1 = this;
         }
 
@@ -19,18 +23,8 @@ namespace AIO
         private void Form1_Shown(Object sender, EventArgs e)
         {
             // Download offsets right when user launches program
-            getOffsets();
+            OffsetHandler.getOffsets();
         }
-
-        
-        // Get offsets
-        private void getOffsets()
-        {
-            OffsetHandler offsetHandler = new OffsetHandler();
-
-            offsetHandler.getOffsets();
-        }
-        
 
         private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

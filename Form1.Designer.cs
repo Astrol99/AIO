@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cheatBox = new System.Windows.Forms.GroupBox();
-            this.cheatTabs = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.ProgramTitle = new System.Windows.Forms.Label();
             this.SubText = new System.Windows.Forms.Label();
             this.ConsoleBox = new System.Windows.Forms.GroupBox();
@@ -45,76 +39,10 @@
             this.githubLink = new System.Windows.Forms.LinkLabel();
             this.attachCSGOBtn = new System.Windows.Forms.Button();
             this.playersGroupBox = new System.Windows.Forms.GroupBox();
-            this.versionLabel = new System.Windows.Forms.Label();
             this.offsetsProgressbar = new System.Windows.Forms.ProgressBar();
-            this.cheatBox.SuspendLayout();
-            this.cheatTabs.SuspendLayout();
             this.ConsoleBox.SuspendLayout();
             this.statusBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cheatBox
-            // 
-            this.cheatBox.Controls.Add(this.cheatTabs);
-            this.cheatBox.ForeColor = System.Drawing.Color.White;
-            this.cheatBox.Location = new System.Drawing.Point(30, 120);
-            this.cheatBox.Name = "cheatBox";
-            this.cheatBox.Size = new System.Drawing.Size(278, 245);
-            this.cheatBox.TabIndex = 1;
-            this.cheatBox.TabStop = false;
-            this.cheatBox.Text = "Cheat Modules";
-            // 
-            // cheatTabs
-            // 
-            this.cheatTabs.Controls.Add(this.tabPage1);
-            this.cheatTabs.Controls.Add(this.tabPage2);
-            this.cheatTabs.Controls.Add(this.tabPage3);
-            this.cheatTabs.Controls.Add(this.tabPage4);
-            this.cheatTabs.Location = new System.Drawing.Point(7, 14);
-            this.cheatTabs.Name = "cheatTabs";
-            this.cheatTabs.SelectedIndex = 0;
-            this.cheatTabs.Size = new System.Drawing.Size(265, 225);
-            this.cheatTabs.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(257, 199);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "ESP";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(257, 199);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Bhop";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(257, 199);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Aimbot";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(257, 199);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Antiaim";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // ProgramTitle
             // 
@@ -142,9 +70,9 @@
             // 
             this.ConsoleBox.Controls.Add(this.consoleTextbox);
             this.ConsoleBox.ForeColor = System.Drawing.Color.White;
-            this.ConsoleBox.Location = new System.Drawing.Point(314, 120);
+            this.ConsoleBox.Location = new System.Drawing.Point(30, 120);
             this.ConsoleBox.Name = "ConsoleBox";
-            this.ConsoleBox.Size = new System.Drawing.Size(423, 318);
+            this.ConsoleBox.Size = new System.Drawing.Size(707, 318);
             this.ConsoleBox.TabIndex = 4;
             this.ConsoleBox.TabStop = false;
             this.ConsoleBox.Text = "Console";
@@ -157,7 +85,7 @@
             this.consoleTextbox.Location = new System.Drawing.Point(6, 19);
             this.consoleTextbox.Name = "consoleTextbox";
             this.consoleTextbox.ReadOnly = true;
-            this.consoleTextbox.Size = new System.Drawing.Size(411, 293);
+            this.consoleTextbox.Size = new System.Drawing.Size(695, 293);
             this.consoleTextbox.TabIndex = 0;
             this.consoleTextbox.Text = "";
             // 
@@ -166,7 +94,7 @@
             this.statusBox.Controls.Add(this.attachedStatus);
             this.statusBox.Controls.Add(this.attachLabel);
             this.statusBox.ForeColor = System.Drawing.Color.White;
-            this.statusBox.Location = new System.Drawing.Point(30, 371);
+            this.statusBox.Location = new System.Drawing.Point(459, 29);
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(278, 67);
             this.statusBox.TabIndex = 5;
@@ -236,21 +164,11 @@
             this.playersGroupBox.TabStop = false;
             this.playersGroupBox.Text = "Players";
             // 
-            // versionLabel
-            // 
-            this.versionLabel.AutoSize = true;
-            this.versionLabel.ForeColor = System.Drawing.Color.White;
-            this.versionLabel.Location = new System.Drawing.Point(894, 441);
-            this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(28, 13);
-            this.versionLabel.TabIndex = 10;
-            this.versionLabel.Text = "v1.0";
-            // 
             // offsetsProgressbar
             // 
-            this.offsetsProgressbar.Location = new System.Drawing.Point(320, 441);
+            this.offsetsProgressbar.Location = new System.Drawing.Point(241, 441);
             this.offsetsProgressbar.Name = "offsetsProgressbar";
-            this.offsetsProgressbar.Size = new System.Drawing.Size(411, 16);
+            this.offsetsProgressbar.Size = new System.Drawing.Size(681, 16);
             this.offsetsProgressbar.TabIndex = 11;
             // 
             // Form1
@@ -260,7 +178,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(934, 464);
             this.Controls.Add(this.offsetsProgressbar);
-            this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.playersGroupBox);
             this.Controls.Add(this.attachCSGOBtn);
             this.Controls.Add(this.githubLink);
@@ -269,14 +186,11 @@
             this.Controls.Add(this.ConsoleBox);
             this.Controls.Add(this.SubText);
             this.Controls.Add(this.ProgramTitle);
-            this.Controls.Add(this.cheatBox);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "AIO";
             this.Load += new System.EventHandler(this.Form1_Shown);
-            this.cheatBox.ResumeLayout(false);
-            this.cheatTabs.ResumeLayout(false);
             this.ConsoleBox.ResumeLayout(false);
             this.statusBox.ResumeLayout(false);
             this.statusBox.PerformLayout();
@@ -286,7 +200,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox cheatBox;
         private System.Windows.Forms.Label ProgramTitle;
         private System.Windows.Forms.Label SubText;
         private System.Windows.Forms.GroupBox ConsoleBox;
@@ -295,12 +208,6 @@
         private System.Windows.Forms.LinkLabel githubLink;
         private System.Windows.Forms.Label attachLabel;
         private System.Windows.Forms.GroupBox playersGroupBox;
-        private System.Windows.Forms.TabControl cheatTabs;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label versionLabel;
         public System.Windows.Forms.Button attachCSGOBtn;
         public System.Windows.Forms.Label attachedStatus;
         public System.Windows.Forms.ProgressBar offsetsProgressbar;

@@ -15,7 +15,7 @@ namespace AIO
         public static int oLocalPlayer;
         public static int Health;
 
-        public void getOffsets()
+        public static void getOffsets()
         {
             // Download files from https://github.com/frk1/hazedumper
 
@@ -32,21 +32,21 @@ namespace AIO
         }
 
         #region Download Progressbar Handlers
-        void DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        static void DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
             Debug.Log(Form1._Form1, "Done!", "Lime");
             rawJSON = e.Result;
             deserializeJSON();
         }
 
-        void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        static void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             offsetsProgressbar.Value = offsetsProgressbar.Maximum * e.ProgressPercentage / 100;
         }
         #endregion
 
 
-        public void deserializeJSON()
+        public static void deserializeJSON()
         {
             try
             {
