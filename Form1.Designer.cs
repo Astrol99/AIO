@@ -37,12 +37,12 @@
             this.attachCSGOBtn = new System.Windows.Forms.Button();
             this.SubText = new System.Windows.Forms.Label();
             this.BhopTab = new System.Windows.Forms.TabPage();
+            this.bhopEnableCheckbox = new System.Windows.Forms.CheckBox();
             this.Main = new System.Windows.Forms.TabPage();
-            this.consoleTextbox = new System.Windows.Forms.RichTextBox();
             this.offsetsProgressbar = new System.Windows.Forms.ProgressBar();
+            this.consoleTextbox = new System.Windows.Forms.RichTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.bhopEnableCheckbox = new System.Windows.Forms.CheckBox();
             this.statusBox.SuspendLayout();
             this.BhopTab.SuspendLayout();
             this.Main.SuspendLayout();
@@ -125,7 +125,17 @@
             this.BhopTab.Padding = new System.Windows.Forms.Padding(3);
             this.BhopTab.Size = new System.Drawing.Size(902, 305);
             this.BhopTab.TabIndex = 1;
-            this.BhopTab.Text = "Bhop";
+            this.BhopTab.Text = "     Bhop     ";
+            // 
+            // bhopEnableCheckbox
+            // 
+            this.bhopEnableCheckbox.AutoSize = true;
+            this.bhopEnableCheckbox.Location = new System.Drawing.Point(14, 7);
+            this.bhopEnableCheckbox.Name = "bhopEnableCheckbox";
+            this.bhopEnableCheckbox.Size = new System.Drawing.Size(59, 17);
+            this.bhopEnableCheckbox.TabIndex = 0;
+            this.bhopEnableCheckbox.Text = "Enable";
+            this.bhopEnableCheckbox.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -139,7 +149,14 @@
             this.Main.Padding = new System.Windows.Forms.Padding(3);
             this.Main.Size = new System.Drawing.Size(902, 305);
             this.Main.TabIndex = 0;
-            this.Main.Text = "Main";
+            this.Main.Text = "     Main     ";
+            // 
+            // offsetsProgressbar
+            // 
+            this.offsetsProgressbar.Location = new System.Drawing.Point(7, 277);
+            this.offsetsProgressbar.Name = "offsetsProgressbar";
+            this.offsetsProgressbar.Size = new System.Drawing.Size(889, 23);
+            this.offsetsProgressbar.TabIndex = 1;
             // 
             // consoleTextbox
             // 
@@ -150,13 +167,6 @@
             this.consoleTextbox.Size = new System.Drawing.Size(889, 264);
             this.consoleTextbox.TabIndex = 0;
             this.consoleTextbox.Text = "";
-            // 
-            // offsetsProgressbar
-            // 
-            this.offsetsProgressbar.Location = new System.Drawing.Point(7, 277);
-            this.offsetsProgressbar.Name = "offsetsProgressbar";
-            this.offsetsProgressbar.Size = new System.Drawing.Size(889, 23);
-            this.offsetsProgressbar.TabIndex = 1;
             // 
             // tabControl1
             // 
@@ -176,16 +186,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "consoleImg.jpg");
             this.imageList1.Images.SetKeyName(1, "bhopImg.jpg");
-            // 
-            // bhopEnableCheckbox
-            // 
-            this.bhopEnableCheckbox.AutoSize = true;
-            this.bhopEnableCheckbox.Location = new System.Drawing.Point(14, 7);
-            this.bhopEnableCheckbox.Name = "bhopEnableCheckbox";
-            this.bhopEnableCheckbox.Size = new System.Drawing.Size(59, 17);
-            this.bhopEnableCheckbox.TabIndex = 0;
-            this.bhopEnableCheckbox.Text = "Enable";
-            this.bhopEnableCheckbox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

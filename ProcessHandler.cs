@@ -22,6 +22,8 @@ namespace AIO
                 Debug.Log("Attached to csgo", "Lime");
                 Form1._Form1.attachedStatus.Text = "True";
                 Form1._Form1.attachedStatus.ForeColor = System.Drawing.Color.Lime;
+
+                Form1._Form1.attachCSGOBtn.Enabled = false;
                 return vam;
             }
         }

@@ -13,6 +13,7 @@ namespace AIO
             this.WindowState = FormWindowState.Normal;
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
+
             _Form1 = this;
         }
 
