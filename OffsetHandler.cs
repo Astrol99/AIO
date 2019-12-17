@@ -7,9 +7,6 @@ namespace AIO
 {
     class OffsetHandler
     {
-        
-        public static ProgressBar offsetsProgressbar = Application.OpenForms["Form1"].Controls["offsetsProgressbar"] as ProgressBar;
-
         public static string rawJSON;
 
         public static int oLocalPlayer;
@@ -23,10 +20,10 @@ namespace AIO
             {
                 Uri url = new Uri("https://raw.githubusercontent.com/frk1/hazedumper/master/csgo.json");
                 
-                offsetsProgressbar.Maximum = 100;
+                Form1._Form1.offsetsProgressbar.Maximum = 100;
                 wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
                 wc.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadStringCompleted);
-                Debug.Log(Form1._Form1, "Downloading offsets...", "Yellow");
+                Debug.Log("Downloading offsets...", "Yellow");
                 wc.DownloadStringAsync(url);
             }
         }
@@ -34,14 +31,14 @@ namespace AIO
         #region Download Progressbar Handlers
         static void DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            Debug.Log(Form1._Form1, "Done!", "Lime");
+            Debug.Log("Done!", "Lime");
             rawJSON = e.Result;
             deserializeJSON();
         }
 
         static void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            offsetsProgressbar.Value = offsetsProgressbar.Maximum * e.ProgressPercentage / 100;
+            Form1._Form1.offsetsProgressbar.Value = Form1._Form1.offsetsProgressbar.Maximum * e.ProgressPercentage / 100;
         }
         #endregion
 
@@ -55,13 +52,13 @@ namespace AIO
                 oLocalPlayer = csgoJson.signatures.dwLocalPlayer;
                 Health = csgoJson.netvars.m_iHealth;
 
-                Debug.Log(Form1._Form1, $"TEST: timestamp -> {csgoJson.timestamp}");
+                Debug.Log($"TEST: timestamp -> {csgoJson.timestamp}");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            Debug.Log(Form1._Form1, "Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
+            Debug.Log("Deserialized and parsed raw offsets from https://github.com/frk1/hazedumper/blob/master/csgo.json");
         }
         
     }
