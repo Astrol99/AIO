@@ -46,14 +46,19 @@
             this.cheatTabControl = new System.Windows.Forms.TabControl();
             this.BhopTab = new System.Windows.Forms.TabPage();
             this.bhopEnableCheckbox = new System.Windows.Forms.CheckBox();
-            this.TriggerTab = new System.Windows.Forms.TabPage();
             this.DettachBtn = new System.Windows.Forms.Button();
+            this.AimbotPage = new System.Windows.Forms.TabPage();
+            this.ESPTab = new System.Windows.Forms.TabPage();
+            this.aimbotEnablebox = new System.Windows.Forms.CheckBox();
+            this.ESPEnableBox = new System.Windows.Forms.CheckBox();
             this.statusBox.SuspendLayout();
             this.Main.SuspendLayout();
             this.DebugTabControl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.cheatTabControl.SuspendLayout();
             this.BhopTab.SuspendLayout();
+            this.AimbotPage.SuspendLayout();
+            this.ESPTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProgramTitle
@@ -189,8 +194,10 @@
             // 
             // cheatTabControl
             // 
+            this.cheatTabControl.CausesValidation = false;
+            this.cheatTabControl.Controls.Add(this.AimbotPage);
+            this.cheatTabControl.Controls.Add(this.ESPTab);
             this.cheatTabControl.Controls.Add(this.BhopTab);
-            this.cheatTabControl.Controls.Add(this.TriggerTab);
             this.cheatTabControl.ImageList = this.imageList1;
             this.cheatTabControl.Location = new System.Drawing.Point(6, 19);
             this.cheatTabControl.Name = "cheatTabControl";
@@ -213,23 +220,13 @@
             // bhopEnableCheckbox
             // 
             this.bhopEnableCheckbox.AutoSize = true;
-            this.bhopEnableCheckbox.Location = new System.Drawing.Point(11, 6);
+            this.bhopEnableCheckbox.Location = new System.Drawing.Point(6, 3);
             this.bhopEnableCheckbox.Name = "bhopEnableCheckbox";
             this.bhopEnableCheckbox.Size = new System.Drawing.Size(59, 17);
             this.bhopEnableCheckbox.TabIndex = 0;
             this.bhopEnableCheckbox.Text = "Enable";
             this.bhopEnableCheckbox.UseVisualStyleBackColor = true;
             this.bhopEnableCheckbox.CheckedChanged += new System.EventHandler(this.bhopEnableCheckbox_CheckedChanged);
-            // 
-            // TriggerTab
-            // 
-            this.TriggerTab.BackColor = System.Drawing.Color.Black;
-            this.TriggerTab.Location = new System.Drawing.Point(4, 23);
-            this.TriggerTab.Name = "TriggerTab";
-            this.TriggerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TriggerTab.Size = new System.Drawing.Size(159, 277);
-            this.TriggerTab.TabIndex = 1;
-            this.TriggerTab.Text = "TriggerBot";
             // 
             // DettachBtn
             // 
@@ -242,6 +239,46 @@
             this.DettachBtn.UseVisualStyleBackColor = true;
             this.DettachBtn.Visible = false;
             this.DettachBtn.Click += new System.EventHandler(this.DettachBtn_Click);
+            // 
+            // AimbotPage
+            // 
+            this.AimbotPage.BackColor = System.Drawing.Color.Black;
+            this.AimbotPage.Controls.Add(this.aimbotEnablebox);
+            this.AimbotPage.Location = new System.Drawing.Point(4, 23);
+            this.AimbotPage.Name = "AimbotPage";
+            this.AimbotPage.Size = new System.Drawing.Size(159, 277);
+            this.AimbotPage.TabIndex = 1;
+            this.AimbotPage.Text = "Aimbot";
+            // 
+            // ESPTab
+            // 
+            this.ESPTab.BackColor = System.Drawing.Color.Black;
+            this.ESPTab.Controls.Add(this.ESPEnableBox);
+            this.ESPTab.Location = new System.Drawing.Point(4, 23);
+            this.ESPTab.Name = "ESPTab";
+            this.ESPTab.Size = new System.Drawing.Size(159, 277);
+            this.ESPTab.TabIndex = 2;
+            this.ESPTab.Text = "ESP";
+            // 
+            // aimbotEnablebox
+            // 
+            this.aimbotEnablebox.AutoSize = true;
+            this.aimbotEnablebox.Location = new System.Drawing.Point(4, 4);
+            this.aimbotEnablebox.Name = "aimbotEnablebox";
+            this.aimbotEnablebox.Size = new System.Drawing.Size(59, 17);
+            this.aimbotEnablebox.TabIndex = 0;
+            this.aimbotEnablebox.Text = "Enable";
+            this.aimbotEnablebox.UseVisualStyleBackColor = true;
+            // 
+            // ESPEnableBox
+            // 
+            this.ESPEnableBox.AutoSize = true;
+            this.ESPEnableBox.Location = new System.Drawing.Point(3, 3);
+            this.ESPEnableBox.Name = "ESPEnableBox";
+            this.ESPEnableBox.Size = new System.Drawing.Size(59, 17);
+            this.ESPEnableBox.TabIndex = 0;
+            this.ESPEnableBox.Text = "Enable";
+            this.ESPEnableBox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -269,6 +306,10 @@
             this.cheatTabControl.ResumeLayout(false);
             this.BhopTab.ResumeLayout(false);
             this.BhopTab.PerformLayout();
+            this.AimbotPage.ResumeLayout(false);
+            this.AimbotPage.PerformLayout();
+            this.ESPTab.ResumeLayout(false);
+            this.ESPTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,10 +330,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl cheatTabControl;
         private System.Windows.Forms.TabPage BhopTab;
-        private System.Windows.Forms.TabPage TriggerTab;
         public System.Windows.Forms.CheckBox bhopEnableCheckbox;
         public System.Windows.Forms.Button DettachBtn;
         public System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TabPage AimbotPage;
+        private System.Windows.Forms.CheckBox aimbotEnablebox;
+        private System.Windows.Forms.TabPage ESPTab;
+        private System.Windows.Forms.CheckBox ESPEnableBox;
     }
 }
 

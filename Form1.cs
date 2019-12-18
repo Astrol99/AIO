@@ -44,6 +44,7 @@ namespace AIO
             ProcessHandler.dettach();
         }
 
+        #region cheatWorkers
         private void bhopEnableCheckbox_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -95,5 +96,6 @@ namespace AIO
                 }
             }
         }
+        #endregion
     }
 }
