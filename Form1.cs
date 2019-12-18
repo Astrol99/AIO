@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Drawing;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace AIO
 {
@@ -34,8 +34,66 @@ namespace AIO
         // Main cheat initation
         private void attachCSGOBtn_Click(object sender, EventArgs e)
         {
-            ProcessHandler ph = new ProcessHandler();
-            
+            ProcessHandler.attach();
+            ProcessHandler.getModuleAddress();
+        }
+
+
+        private void DettachBtn_Click(object sender, EventArgs e)
+        {
+            ProcessHandler.dettach();
+        }
+
+        private void bhopEnableCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (bhopEnableCheckbox.Checked)
+            {
+                Debug.Log("Enabled bhop");
+                this.backgroundWorker1.RunWorkerAsync();
+            }
+            else if (bhopEnableCheckbox.Checked == false)
+            {
+                this.backgroundWorker1.CancelAsync();
+                Debug.Log("Disabled bhop");
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker bw = sender as BackgroundWorker;
+
+            e.Result = Bhop.startBhop(bw);
+
+            if (bw.CancellationPending)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                Debug.Log("Stopped bhop process");
+            }
+            else if (e.Error != null)
+            {
+                Debug.Log($"Bhop error:{Environment.NewLine}{e.Error.Message}", "Red");
+                MessageBox.Show("An error occured: " + e.Error.Message);
+                bhopEnableCheckbox.Checked = false;
+            }
+            else
+            {
+                if (e.Result.ToString() == "0")
+                {
+                    Debug.Log("Successfully stopped bhop");
+                }
+                else
+                {
+                    Debug.Log("Bhop stop error e.Result = " + e.Result.ToString());
+                }
+            }
         }
     }
 }

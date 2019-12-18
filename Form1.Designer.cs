@@ -36,17 +36,24 @@
             this.attachLabel = new System.Windows.Forms.Label();
             this.attachCSGOBtn = new System.Windows.Forms.Button();
             this.SubText = new System.Windows.Forms.Label();
-            this.BhopTab = new System.Windows.Forms.TabPage();
-            this.bhopEnableCheckbox = new System.Windows.Forms.CheckBox();
             this.Main = new System.Windows.Forms.TabPage();
             this.offsetsProgressbar = new System.Windows.Forms.ProgressBar();
             this.consoleTextbox = new System.Windows.Forms.RichTextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.DebugTabControl = new System.Windows.Forms.TabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cheatTabControl = new System.Windows.Forms.TabControl();
+            this.BhopTab = new System.Windows.Forms.TabPage();
+            this.bhopEnableCheckbox = new System.Windows.Forms.CheckBox();
+            this.TriggerTab = new System.Windows.Forms.TabPage();
+            this.DettachBtn = new System.Windows.Forms.Button();
             this.statusBox.SuspendLayout();
-            this.BhopTab.SuspendLayout();
             this.Main.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.DebugTabControl.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.cheatTabControl.SuspendLayout();
+            this.BhopTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProgramTitle
@@ -114,29 +121,6 @@
             this.SubText.TabIndex = 3;
             this.SubText.Text = "All-in-one csgo cheat";
             // 
-            // BhopTab
-            // 
-            this.BhopTab.BackColor = System.Drawing.Color.Black;
-            this.BhopTab.Controls.Add(this.bhopEnableCheckbox);
-            this.BhopTab.ForeColor = System.Drawing.Color.White;
-            this.BhopTab.ImageKey = "bhopImg.jpg";
-            this.BhopTab.Location = new System.Drawing.Point(4, 23);
-            this.BhopTab.Name = "BhopTab";
-            this.BhopTab.Padding = new System.Windows.Forms.Padding(3);
-            this.BhopTab.Size = new System.Drawing.Size(902, 305);
-            this.BhopTab.TabIndex = 1;
-            this.BhopTab.Text = "     Bhop     ";
-            // 
-            // bhopEnableCheckbox
-            // 
-            this.bhopEnableCheckbox.AutoSize = true;
-            this.bhopEnableCheckbox.Location = new System.Drawing.Point(14, 7);
-            this.bhopEnableCheckbox.Name = "bhopEnableCheckbox";
-            this.bhopEnableCheckbox.Size = new System.Drawing.Size(59, 17);
-            this.bhopEnableCheckbox.TabIndex = 0;
-            this.bhopEnableCheckbox.Text = "Enable";
-            this.bhopEnableCheckbox.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
             this.Main.BackColor = System.Drawing.Color.Black;
@@ -147,7 +131,7 @@
             this.Main.Location = new System.Drawing.Point(4, 23);
             this.Main.Name = "Main";
             this.Main.Padding = new System.Windows.Forms.Padding(3);
-            this.Main.Size = new System.Drawing.Size(902, 305);
+            this.Main.Size = new System.Drawing.Size(717, 305);
             this.Main.TabIndex = 0;
             this.Main.Text = "     Main     ";
             // 
@@ -155,30 +139,29 @@
             // 
             this.offsetsProgressbar.Location = new System.Drawing.Point(7, 277);
             this.offsetsProgressbar.Name = "offsetsProgressbar";
-            this.offsetsProgressbar.Size = new System.Drawing.Size(889, 23);
+            this.offsetsProgressbar.Size = new System.Drawing.Size(704, 23);
             this.offsetsProgressbar.TabIndex = 1;
             // 
             // consoleTextbox
             // 
-            this.consoleTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.consoleTextbox.BackColor = System.Drawing.Color.Black;
             this.consoleTextbox.ForeColor = System.Drawing.Color.White;
             this.consoleTextbox.Location = new System.Drawing.Point(7, 7);
             this.consoleTextbox.Name = "consoleTextbox";
-            this.consoleTextbox.Size = new System.Drawing.Size(889, 264);
+            this.consoleTextbox.Size = new System.Drawing.Size(704, 264);
             this.consoleTextbox.TabIndex = 0;
             this.consoleTextbox.Text = "";
             // 
-            // tabControl1
+            // DebugTabControl
             // 
-            this.tabControl1.Controls.Add(this.Main);
-            this.tabControl1.Controls.Add(this.BhopTab);
-            this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.Location = new System.Drawing.Point(12, 120);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(910, 332);
-            this.tabControl1.TabIndex = 9;
+            this.DebugTabControl.Controls.Add(this.Main);
+            this.DebugTabControl.ImageList = this.imageList1;
+            this.DebugTabControl.Location = new System.Drawing.Point(12, 120);
+            this.DebugTabControl.Multiline = true;
+            this.DebugTabControl.Name = "DebugTabControl";
+            this.DebugTabControl.SelectedIndex = 0;
+            this.DebugTabControl.Size = new System.Drawing.Size(725, 332);
+            this.DebugTabControl.TabIndex = 9;
             // 
             // imageList1
             // 
@@ -187,17 +170,92 @@
             this.imageList1.Images.SetKeyName(0, "consoleImg.jpg");
             this.imageList1.Images.SetKeyName(1, "bhopImg.jpg");
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cheatTabControl);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(743, 120);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(179, 332);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cheat Modules";
+            // 
+            // cheatTabControl
+            // 
+            this.cheatTabControl.Controls.Add(this.BhopTab);
+            this.cheatTabControl.Controls.Add(this.TriggerTab);
+            this.cheatTabControl.ImageList = this.imageList1;
+            this.cheatTabControl.Location = new System.Drawing.Point(6, 19);
+            this.cheatTabControl.Name = "cheatTabControl";
+            this.cheatTabControl.SelectedIndex = 0;
+            this.cheatTabControl.Size = new System.Drawing.Size(167, 304);
+            this.cheatTabControl.TabIndex = 0;
+            // 
+            // BhopTab
+            // 
+            this.BhopTab.BackColor = System.Drawing.Color.Black;
+            this.BhopTab.Controls.Add(this.bhopEnableCheckbox);
+            this.BhopTab.ImageKey = "bhopImg.jpg";
+            this.BhopTab.Location = new System.Drawing.Point(4, 23);
+            this.BhopTab.Name = "BhopTab";
+            this.BhopTab.Padding = new System.Windows.Forms.Padding(3);
+            this.BhopTab.Size = new System.Drawing.Size(159, 277);
+            this.BhopTab.TabIndex = 0;
+            this.BhopTab.Text = "Bhop";
+            // 
+            // bhopEnableCheckbox
+            // 
+            this.bhopEnableCheckbox.AutoSize = true;
+            this.bhopEnableCheckbox.Location = new System.Drawing.Point(11, 6);
+            this.bhopEnableCheckbox.Name = "bhopEnableCheckbox";
+            this.bhopEnableCheckbox.Size = new System.Drawing.Size(59, 17);
+            this.bhopEnableCheckbox.TabIndex = 0;
+            this.bhopEnableCheckbox.Text = "Enable";
+            this.bhopEnableCheckbox.UseVisualStyleBackColor = true;
+            this.bhopEnableCheckbox.CheckedChanged += new System.EventHandler(this.bhopEnableCheckbox_CheckedChanged);
+            // 
+            // TriggerTab
+            // 
+            this.TriggerTab.BackColor = System.Drawing.Color.Black;
+            this.TriggerTab.Location = new System.Drawing.Point(4, 23);
+            this.TriggerTab.Name = "TriggerTab";
+            this.TriggerTab.Padding = new System.Windows.Forms.Padding(3);
+            this.TriggerTab.Size = new System.Drawing.Size(159, 277);
+            this.TriggerTab.TabIndex = 1;
+            this.TriggerTab.Text = "TriggerBot";
+            // 
+            // DettachBtn
+            // 
+            this.DettachBtn.Enabled = false;
+            this.DettachBtn.Location = new System.Drawing.Point(764, 29);
+            this.DettachBtn.Name = "DettachBtn";
+            this.DettachBtn.Size = new System.Drawing.Size(152, 67);
+            this.DettachBtn.TabIndex = 11;
+            this.DettachBtn.Text = "Dettach To CSGO";
+            this.DettachBtn.UseVisualStyleBackColor = true;
+            this.DettachBtn.Visible = false;
+            this.DettachBtn.Click += new System.EventHandler(this.DettachBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(934, 464);
+            this.Controls.Add(this.DettachBtn);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.attachCSGOBtn);
             this.Controls.Add(this.statusBox);
             this.Controls.Add(this.SubText);
             this.Controls.Add(this.ProgramTitle);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.DebugTabControl);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -205,10 +263,12 @@
             this.Load += new System.EventHandler(this.Form1_Shown);
             this.statusBox.ResumeLayout(false);
             this.statusBox.PerformLayout();
+            this.Main.ResumeLayout(false);
+            this.DebugTabControl.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.cheatTabControl.ResumeLayout(false);
             this.BhopTab.ResumeLayout(false);
             this.BhopTab.PerformLayout();
-            this.Main.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,13 +281,18 @@
         public System.Windows.Forms.Button attachCSGOBtn;
         public System.Windows.Forms.Label attachedStatus;
         private System.Windows.Forms.Label SubText;
-        private System.Windows.Forms.TabPage BhopTab;
         private System.Windows.Forms.TabPage Main;
         public System.Windows.Forms.ProgressBar offsetsProgressbar;
         public System.Windows.Forms.RichTextBox consoleTextbox;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl DebugTabControl;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.CheckBox bhopEnableCheckbox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabControl cheatTabControl;
+        private System.Windows.Forms.TabPage BhopTab;
+        private System.Windows.Forms.TabPage TriggerTab;
+        public System.Windows.Forms.CheckBox bhopEnableCheckbox;
+        public System.Windows.Forms.Button DettachBtn;
+        public System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

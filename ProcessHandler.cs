@@ -5,33 +5,63 @@ namespace AIO
 {
     class ProcessHandler
     {
-        public VAMemory vam = attach();
-        public int BaseClient = getModuleAddress();
+        public static VAMemory vam;
+        public static int BaseClient;
 
         // Attach to csgo process
-        private static VAMemory attach()
+        public static void attach()
         {
-            VAMemory vam = new VAMemory("csgo");
+            vam = new VAMemory("csgo");
             if (vam.CheckProcess() == false)
             {
                 Debug.Log("Failed to attach to csgo", "Red");
-                return null;
             }
             else
             {
+                // Logging that program has sucessfully attached to csgo
                 Debug.Log("Attached to csgo", "Lime");
                 Form1._Form1.attachedStatus.Text = "True";
                 Form1._Form1.attachedStatus.ForeColor = System.Drawing.Color.Lime;
 
+                // Disable Attach Button
                 Form1._Form1.attachCSGOBtn.Enabled = false;
-                return vam;
+                Form1._Form1.attachCSGOBtn.Visible = false;
+
+                // Enable Dettach Button
+                Form1._Form1.DettachBtn.Enabled = true;
+                Form1._Form1.DettachBtn.Visible = true;
+
             }
         }
 
-        // Get module client_panorama.dll address of csgo process
-        private static int getModuleAddress()
+        // Dettach to csgo process
+        public static void dettach()
         {
-            try
+            // Stop cheats
+            Form1._Form1.backgroundWorker1.CancelAsync();
+
+            // Make vam var into nothing
+            vam = null;
+
+            // Log stuff
+            Debug.Log("Dettached to csgo", "Lime");
+            Form1._Form1.attachedStatus.Text = "False";
+            Form1._Form1.attachedStatus.ForeColor = System.Drawing.Color.Red;
+
+            // Enable Attach Button
+            Form1._Form1.attachCSGOBtn.Enabled = true;
+            Form1._Form1.attachCSGOBtn.Visible = true;
+
+            // Disable Dettach Button
+            Form1._Form1.DettachBtn.Enabled = false;
+            Form1._Form1.DettachBtn.Visible = false;
+
+        }
+
+        // Get module client_panorama.dll address of csgo process
+        public static void getModuleAddress()
+        {
+            if (vam.CheckProcess())
             {
                 Process[] p = Process.GetProcessesByName("csgo");
 
@@ -43,20 +73,15 @@ namespace AIO
                         if (m.ModuleName == "client_panorama.dll")
                         {
                             Debug.Log($"Found target: client_panorama.dll -> 0x{m.BaseAddress}", "Lime");
-                            return (int)m.BaseAddress;
+                            BaseClient = (int)m.BaseAddress;
                         }
                     }
-                    return 0;
-                }
-                else
-                {
-                    return 1;
                 }
             }
-            catch(Exception ex)
+            else
             {
-                Debug.Log($"Error getting module address:\n{ex}", "Red");
-                return 1;
+                Debug.Log("Failed to get module address", "Red");
+                return;
             }
         }
     }

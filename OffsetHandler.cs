@@ -9,8 +9,10 @@ namespace AIO
     {
         public static string rawJSON;
 
-        public static int oLocalPlayer;
+        public static int aLocalPlayer;
         public static int Health;
+        public static int oFlags;
+        public static int aJump;
 
         public static void getOffsets()
         {
@@ -49,10 +51,12 @@ namespace AIO
             {
                 var csgoJson = JsonConvert.DeserializeObject<dynamic>(rawJSON);
 
-                oLocalPlayer = csgoJson.signatures.dwLocalPlayer;
+                aLocalPlayer = csgoJson.signatures.dwLocalPlayer;
                 Health = csgoJson.netvars.m_iHealth;
+                oFlags = csgoJson.netvars.m_fFlags;
+                aJump = csgoJson.signatures.dwForceJump;
 
-                Debug.Log($"TEST: timestamp -> {csgoJson.timestamp}");
+                Debug.Log($"Timestamp -> {csgoJson.timestamp}");
             }
             catch (Exception ex)
             {
