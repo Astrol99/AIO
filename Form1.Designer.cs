@@ -47,18 +47,15 @@
             this.BhopTab = new System.Windows.Forms.TabPage();
             this.bhopEnableCheckbox = new System.Windows.Forms.CheckBox();
             this.DettachBtn = new System.Windows.Forms.Button();
-            this.AimbotPage = new System.Windows.Forms.TabPage();
-            this.ESPTab = new System.Windows.Forms.TabPage();
-            this.aimbotEnablebox = new System.Windows.Forms.CheckBox();
-            this.ESPEnableBox = new System.Windows.Forms.CheckBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.statusBox.SuspendLayout();
             this.Main.SuspendLayout();
             this.DebugTabControl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.cheatTabControl.SuspendLayout();
             this.BhopTab.SuspendLayout();
-            this.AimbotPage.SuspendLayout();
-            this.ESPTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProgramTitle
@@ -174,6 +171,7 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "consoleImg.jpg");
             this.imageList1.Images.SetKeyName(1, "bhopImg.jpg");
+            this.imageList1.Images.SetKeyName(2, "crosshair.jpg");
             // 
             // backgroundWorker1
             // 
@@ -195,8 +193,6 @@
             // cheatTabControl
             // 
             this.cheatTabControl.CausesValidation = false;
-            this.cheatTabControl.Controls.Add(this.AimbotPage);
-            this.cheatTabControl.Controls.Add(this.ESPTab);
             this.cheatTabControl.Controls.Add(this.BhopTab);
             this.cheatTabControl.ImageList = this.imageList1;
             this.cheatTabControl.Location = new System.Drawing.Point(6, 19);
@@ -240,52 +236,46 @@
             this.DettachBtn.Visible = false;
             this.DettachBtn.Click += new System.EventHandler(this.DettachBtn_Click);
             // 
-            // AimbotPage
+            // linkLabel1
             // 
-            this.AimbotPage.BackColor = System.Drawing.Color.Black;
-            this.AimbotPage.Controls.Add(this.aimbotEnablebox);
-            this.AimbotPage.Location = new System.Drawing.Point(4, 23);
-            this.AimbotPage.Name = "AimbotPage";
-            this.AimbotPage.Size = new System.Drawing.Size(159, 277);
-            this.AimbotPage.TabIndex = 1;
-            this.AimbotPage.Text = "Aimbot";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.linkLabel1.Location = new System.Drawing.Point(761, 455);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(160, 13);
+            this.linkLabel1.TabIndex = 12;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://github.com/astrol99/AIO";
             // 
-            // ESPTab
+            // label1
             // 
-            this.ESPTab.BackColor = System.Drawing.Color.Black;
-            this.ESPTab.Controls.Add(this.ESPEnableBox);
-            this.ESPTab.Location = new System.Drawing.Point(4, 23);
-            this.ESPTab.Name = "ESPTab";
-            this.ESPTab.Size = new System.Drawing.Size(159, 277);
-            this.ESPTab.TabIndex = 2;
-            this.ESPTab.Text = "ESP";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(13, 455);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "By: astr0";
             // 
-            // aimbotEnablebox
+            // label2
             // 
-            this.aimbotEnablebox.AutoSize = true;
-            this.aimbotEnablebox.Location = new System.Drawing.Point(4, 4);
-            this.aimbotEnablebox.Name = "aimbotEnablebox";
-            this.aimbotEnablebox.Size = new System.Drawing.Size(59, 17);
-            this.aimbotEnablebox.TabIndex = 0;
-            this.aimbotEnablebox.Text = "Enable";
-            this.aimbotEnablebox.UseVisualStyleBackColor = true;
-            // 
-            // ESPEnableBox
-            // 
-            this.ESPEnableBox.AutoSize = true;
-            this.ESPEnableBox.Location = new System.Drawing.Point(3, 3);
-            this.ESPEnableBox.Name = "ESPEnableBox";
-            this.ESPEnableBox.Size = new System.Drawing.Size(59, 17);
-            this.ESPEnableBox.TabIndex = 0;
-            this.ESPEnableBox.Text = "Enable";
-            this.ESPEnableBox.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(705, 455);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "v1.0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(934, 464);
+            this.ClientSize = new System.Drawing.Size(934, 473);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.DettachBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.attachCSGOBtn);
@@ -306,10 +296,6 @@
             this.cheatTabControl.ResumeLayout(false);
             this.BhopTab.ResumeLayout(false);
             this.BhopTab.PerformLayout();
-            this.AimbotPage.ResumeLayout(false);
-            this.AimbotPage.PerformLayout();
-            this.ESPTab.ResumeLayout(false);
-            this.ESPTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,10 +319,9 @@
         public System.Windows.Forms.CheckBox bhopEnableCheckbox;
         public System.Windows.Forms.Button DettachBtn;
         public System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TabPage AimbotPage;
-        private System.Windows.Forms.CheckBox aimbotEnablebox;
-        private System.Windows.Forms.TabPage ESPTab;
-        private System.Windows.Forms.CheckBox ESPEnableBox;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
