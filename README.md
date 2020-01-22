@@ -1,6 +1,5 @@
 # AIO
 A C# CSGO cheat
-# STOPPED DEVELOPMENT
-Moved on to developing internal cheats in c++
+![AIO Cheat](https://github.com/Astrol99/AIO/blob/master/Capture.JPG)
 ## Features
 - Bhop
